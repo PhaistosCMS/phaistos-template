@@ -1,0 +1,39 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: $max-container-width;
+
+	.ph-pagination__item {
+		border-bottom: 1px solid transparent;
+		display: block;
+		font-weight: 300;
+		font-size: $fs-md;
+		margin: 0 $spacing-sm;
+		min-width: $spacing-lg;
+		line-height: $spacing-lg;
+		text-align: center;
+		transition: border-color 0.3s ease-in-out;
+	}
+
+	.ph-pagination__link {
+		display: block;
+		width: 100%;
+	}
+
+	.ph-pagination__link,
+	.ph-pagination__link:hover,
+	.ph-pagination__link:focus {
+		color: $color-black-1;
+	}
+
+	.ph-pagination__item:not(.ph-pagination__item--spacer):hover,
+	.ph-pagination__item:not(.ph-pagination__item--spacer):focus-within,
+	.ph-pagination__item--active {
+		border-bottom-color: $color-black-1;
+	}
+
+	.ph-pagination__link--active {
+		font-weight: 300;
+	}
+}

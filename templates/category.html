@@ -1,0 +1,15 @@
+<div class="category container">
+	<h1 class="category__title">{{categoryName}}</h1>
+	<section class="posts" aria-label="Latest Posts">
+		<ul role="none" class="post__list">
+			{{#posts}}
+			<li role="none" class="post__list-item">
+				{{@component(post)}}
+			</li>
+			{{/posts}}
+		</ul>
+		<div class="pagination">
+			{{@pagination()}}
+		</div>	
+	</section>
+</div>

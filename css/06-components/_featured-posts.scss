@@ -1,0 +1,151 @@
+.featured-posts {
+	display: flex;
+	max-width: $max-container-width;
+	margin: 0 auto;
+	margin-bottom: $spacing-xxl;
+
+
+	.featured-post--main {
+		flex: 38;
+		margin-right: $spacing-md;
+	}
+
+	&__column {
+		flex: 37;
+		margin: 0 $spacing-md;
+	}
+
+	.featured-post--last {
+		flex: 25;
+		margin-left: $spacing-md;
+	}
+
+	@media(max-width: 767px) {
+		flex-direction: column;
+	}
+}
+
+.featured-post {
+
+	&__image {
+		max-width: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	&__title {
+		font-weight: 600;
+		line-height: 1.15;
+		margin-bottom: $spacing-sm;
+	}
+
+	&__link {
+		color: $color-black-0;
+		text-decoration: none;
+	}
+
+	&__perex {
+		color: $color-black-1;
+		font-size: $fs-sm;
+		line-height: 1.37;
+		margin-bottom: $spacing-md;
+	}
+
+	&__date {
+		color: $color-black-1;
+		font-size: $fs-xs;
+		font-weight: 300;
+		display: block;
+		text-align: right;
+	}
+}
+
+.featured-post--mid {
+	display: flex;
+
+	&:not(:last-of-type) {
+		margin-bottom: $spacing-lg;
+	}
+
+	.featured-post__content-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%; // IE11 fix
+	}
+
+	.featured-post__image-wrap {
+		margin-right: $spacing-md;
+	}
+
+	.featured-post__image {
+		height: 100px;
+		max-width: 100px;
+		min-width: 100px;
+		width: 100px;
+	}	
+
+	.featured-post__title {
+		font-size: $fs-sm;
+	}
+}
+
+.featured-post--main {
+
+	.featured-post__image {
+		height: 272px;
+		margin-bottom: $spacing-md;
+	}
+
+	.featured-post__title {
+		font-size: $fs-lg;
+	}
+}
+
+.featured-post--last {
+
+	.featured-post__image {
+		height: 170px;
+		margin-bottom: $spacing-md;
+	}
+
+	.featured-post__title {
+		font-size: $fs-md;
+	}
+}
+
+@media (max-width: 767px) {
+	
+	.featured-post--last,
+	.featured-post--main,
+	.featured-posts__column {
+		flex: none;
+	}
+
+	.featured-posts {
+		
+		.featured-post--main {
+			margin-bottom: $spacing-lg;
+			margin-right: 0;
+		}
+
+		&__column {
+			margin: 0;
+			margin-bottom: $spacing-lg;
+		}
+	}
+
+	.featured-post--main .featured-post__image {
+		height: 200px;
+	}
+
+	.featured-post--mid .featured-post__content-wrap {
+		width: 100%;
+	}
+}
+
+.amp {
+	.featured-post__image {
+		height: auto;
+	}
+}

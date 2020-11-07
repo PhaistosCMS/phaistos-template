@@ -1,0 +1,43 @@
+<header class="header">
+	<a href="{{homeUrl}}" class="header__logo {{!# logoRelativePath : header__logo--name #!}}" aria-label="{{projectName}}">
+		{{#logoRelativePath}}
+			{{@image(logoRelativePath, maxWidth=300, className=header__logo-img)}}
+		{{/logoRelativePath}}
+		{{!#logoRelativePath}}
+			{{projectName}}
+		{{/logoRelativePath}}
+	</a>
+	<button class="header__menu-toggle" aria-label="Show Menu" {{#isAmp : on="tap:main-navigation.toggleClass(class='header__navigation--open')"#}}>
+        <i role="presentation">
+			{{!#isAmp}}
+            	<img src="{{assetsPath}}/hamburger.svg" width="30" height="30">
+			{{/isAmp}}
+			{{#isAmp}}
+            	<amp-img src="{{assetsPath}}/hamburger.svg" layout="fixed" width="30" height="30"></amp-img>
+			{{/isAmp}}
+		</i>
+    </button>
+	<nav role="navigation" aria-label="Main Menu" class="header__navigation" id="main-navigation">
+		<button class="header__menu-close" aria-label="Hide Menu" {{#isAmp : on="tap:main-navigation.toggleClass(class='header__navigation--open')"#}}>
+            <i role="presentation">
+				{{!#isAmp}}
+					<img src="{{assetsPath}}/close.svg" width="30" height="30">
+				{{/isAmp}}
+				{{#isAmp}}
+            		<amp-img src="{{assetsPath}}/close.svg" layout="fixed" width="30" height="30"></amp-img>
+				{{/isAmp}}
+            </i>
+        </button>
+		<ul role="menubar" class="header__menu">
+			{{#menuGroups}}
+				{{#items}}
+					<li role="none" class="header__menu-item {{# active : header__menu-item--active #}}">
+						<a href="{{link}}" role="menuitem" class="header__menu-link">{{label}}</a>
+					</li>
+				{{/items}}
+			{{/menuGroups}}
+		</ul>
+		<div role="presentation" class="header__separator"></div>
+	</nav>
+	<div role="presentation" class="header__backdrop" {{#isAmp : tabindex="0" on="tap:page-menu.toggleClass(class='header__navigation--open')"#}}></div>
+</header>

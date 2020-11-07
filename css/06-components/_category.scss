@@ -1,0 +1,10 @@
+.category {
+	&__title {
+		font-size: $fs-xl;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		margin-bottom: $spacing-lg;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}

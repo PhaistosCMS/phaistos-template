@@ -1,0 +1,30 @@
+<article class="post-page" aria-labelledby="h1">
+	<div class="post-page__meta">
+		<time class="post-page__date" datetime="{{publishDateISO}}">{{publishDate}}</time>
+		<a href="{{categoryLink}}" class="post-page__category">
+			{{category}}
+		</a>
+	</div>
+	{{postContent}}
+	{{#authorName}}
+	<span class="post-page__author">
+		{{authorName}}
+	</span>
+	{{/authorName}}
+</article>
+{{#olderPosts[0]|newerPosts[0]}}
+<section role="region" aria-label="Related posts" class="related-posts container">
+	<div class="related-posts__post-wrap" aria-label="Previous Post">
+		{{#olderPosts[0]}}
+			<span class="related-posts__title">Previous Post</span>
+			{{@component(relatedPost)}}
+		{{/olderPosts[0]}}
+	</div>
+	<div class="related-posts__post-wrap" aria-label="Next Post">
+		{{#newerPosts[0]}}
+			<span class="related-posts__title">Next Post</span>
+			{{@component(relatedPost)}}
+		{{/newerPosts[0]}}
+	</div>
+</section>
+{{/olderPosts[0]|newerPosts[0]}}

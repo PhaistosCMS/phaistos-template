@@ -1,0 +1,25 @@
+.home {
+
+	&__next-page-wrap {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__next-page {
+		border: 1px solid $color-black-1;
+		color: $color-black-1;
+		display: block;
+		letter-spacing: 0.03em;
+		line-height: 22px;
+		padding: $spacing-sm $spacing-md;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+	}
+
+	&__next-page:hover,
+	&__next-page:focus {
+		background: $color-black-1;
+		color: $color-white;
+	}
+}

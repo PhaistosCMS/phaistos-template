@@ -1,0 +1,79 @@
+<div class="home">
+	{{#isFirstPage}}
+		<section role="region" aria-label="Featured Posts" class="featured-posts">
+			{{#posts[0]}}
+				<article class="featured-post featured-post--main" aria-labelledby="post-0-title">
+					<a href="{{link}}" class="featured-post__image-wrap" aria-label="{{title}}">
+						{{@image(featuredImage, maxWidth=800, className=featured-post__image)}}
+					</a>
+					<h2 class="featured-post__title" id="post-0-title">
+						<a href="{{link}}" class="featured-post__link">{{title}}</a>
+					</h2>
+					<p class="featured-post__perex">
+						{{perex}}
+					</p>
+					<time class="featured-post__date" datetime="{{publishDateISO}}">{{publishDate}}</time>
+				</article>
+			{{/posts[0]}}
+			<div class="featured-posts__column">
+				{{#posts[1-4]}}
+					<article class="featured-post featured-post--mid" aria-labelledby="post-{{__phIdx}}-title">
+						<a href="{{link}}" class="featured-post__image-wrap" aria-label="{{title}}">
+							{{@image(featuredImage, maxWidth=400, className=featured-post__image)}}
+						</a>
+						<div class="featured-post__content-wrap">
+							<h2 class="featured-post__title" id="post-{{__phIdx}}-title">
+								<a href="{{link}}" class="featured-post__link">{{title}}</a>
+							</h2>
+							<time class="featured-post__date" datetime="{{publishDateISO}}">{{publishDate}}</time>
+						</div>
+					</article>
+				{{/posts[1-4]}}
+			</div>
+			{{#posts[4]}}
+				<article class="featured-post featured-post--last" aria-labelledby="post-4-title">
+					<a href="{{link}}" class="featured-post__image-wrap" aria-label="{{title}}">
+						{{@image(featuredImage, maxWidth=400, className=featured-post__image)}}
+					</a>
+					<h2 class="featured-post__title" id="post-4-title">
+						<a href="{{link}}" class="featured-post__link">{{title}}</a>
+					</h2>
+					<p class="featured-post__perex">
+						{{perex}}
+					</p>
+					<time class="featured-post__date" datetime="{{publishDateISO}}">{{publishDate}}</time>
+				</article>
+			{{/posts[4]}}
+		</section>
+	{{/isFirstPage}}
+	<section class="posts" aria-label="Latest Posts">
+        <ul role="none" class="post__list">
+			{{#isFirstPage}}
+				{{#posts[5-]}}
+					<li role="none" class="post__list-item">
+						{{@component(post)}}
+					</li>
+				{{/posts[5-]}}
+			{{/isFirstPage}}
+			{{!#isFirstPage}}
+				{{#posts}}
+				<li role="none" class="post__list-item">
+					{{@component(post)}}
+				</li>
+				{{/posts}}
+			{{/isFirstPage}}
+		</ul>
+		{{#isFirstPage}}
+			{{#nextPage}}
+				<div class="home__next-page-wrap">
+					<a href="{{nextPage}}" class="home__next-page">{{nextPageLabel|See more posts}}</a>
+				</div>
+			{{/nextPage}}
+		{{/isFirstPage}}
+		{{!#isFirstPage}}
+			<div class="pagination">
+				{{@pagination()}}
+			</div>
+		{{/isFirstPage}}
+	</section>
+</div>

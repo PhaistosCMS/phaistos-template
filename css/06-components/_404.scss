@@ -1,0 +1,31 @@
+.page-404 {
+	margin-bottom: $spacing-lg;
+
+	&__title {
+		font-size: $fs-xl;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		margin-bottom: $spacing-lg;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__link-wrap {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__link {
+		border-bottom: 1px solid $color-black-1;
+		color: $color-black-1;
+		font-size: $fs-md;
+		padding: $spacing-xs;
+		text-decoration: none;
+		transition: border-color 0.3s ease-in-out;
+	}
+
+	&__link:hover,
+	&__link:focus {
+		border-bottom-color: transparent;
+	}
+}

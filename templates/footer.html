@@ -1,0 +1,16 @@
+<footer class="footer" role="contentinfo" aria-label="Footer">
+	<div class="footer__separator" role="presentation"></div>
+	{{#footerContent}}
+		<div class="footer__content">
+			{{footerContent}}		
+		</div>
+	{{/footerContent}}
+	<div class="footer__info">
+		{{#logoRelativePath}}
+		<a href="{{homeUrl}}" class="footer__logo" aria-label="{{projectName}}">
+			{{@image(logoRelativePath, maxWidth=300, className=header__logo-img)}}
+		</a>
+		{{/logoRelativePath}}
+		<span class="footer__project-name">{{projectName}}</span>
+	</div>
+</footer>

@@ -1,0 +1,92 @@
+.post-page {
+	margin: 0 auto;
+	margin-bottom: $spacing-xl;
+	max-width: 968px;
+
+	&__meta {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: $spacing-md;
+	}
+
+	&__date,
+	&__category,
+	&__author {
+		color: $color-black-1;
+		font-size: $fs-sm;
+		font-weight: 300;
+		line-height: $fs-sm;
+	}
+
+	&__category {
+		letter-spacing: 0.05em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	&__author {
+		display: block;
+		text-align: right;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $max-content-container-width;
+		width: 100%;
+	}
+	
+}
+
+.h1, .h2, .h3, .h4, .h5, .p, .ol, .ul,
+.img, .table, .iframe, .pre {
+	margin-bottom: $spacing-lg;
+}
+
+.h1, .h2, .h3, .h4, .h5, .p,
+.ol, .ul {
+	display: block;
+}
+
+.h1, .h2, .h3, .h4, .h5, .p,
+.ol, .ul, .table, .pre, .post-page__meta {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max-content-container-width;
+}
+
+
+.img, .iframe {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+
+.p, .table, .ol, .ul {
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.h1, .h2 {
+	font-weight: 700;
+}
+
+.h3, .h4, .h5 {
+	font-weight: 500;
+}
+
+.h1 {
+	font-size: $fs-xl;
+	margin-bottom: $spacing-lg;
+}
+
+.h2, .h3 {
+	font-size: $fs-lg;
+}
+
+.h4, .h5 {
+	font-size: $fs-md;
+}
+
+.ul, .ol, .table {
+	.p {
+		margin-bottom: 0;
+	}
+}

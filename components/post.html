@@ -1,0 +1,129 @@
+<template>
+	<article class="post" aria-labelledby="post-{{__phIdx}}-title">
+		<div class="post__content">
+			<div class="post__meta">
+				<a href="{{categoryLink}}" class="post__category">
+					{{category}}
+				</a>
+				<time class="post__date" datetime="{{publishDateISO}}">{{publishDate}}</time>
+			</div>
+			<h2 class="post__title" id="post-{{__phIdx}}-title">
+				<a href="{{link}}" class="post__link">{{title}}</a>
+			</h2>
+			<p class="post__perex">{{perex}}</p>
+		</div>
+		<a href="{{link}}" aria-label="{{title}}" class="post__image-wrap">
+			{{@image(featuredImage,maxWidth=800,className=post__image,lazyload=true)}}
+		</a>
+	</article>
+</template>
+
+<style>
+	.posts {
+		margin-bottom: 32px;
+	}
+
+	.post__list {
+		list-style: none;
+		margin: 0 auto;
+		margin-bottom: 48px;
+		max-width: 800px;
+		padding: 0;
+	}
+
+	.post__list-item:not(:last-of-type) {
+		margin-bottom: 48px;
+	}
+
+	.post {
+		display: flex;
+	}
+
+	.post__content {
+		margin-right: 32px;
+		width: 100%;
+	}
+
+	.post__meta {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 4px;
+	}
+
+	.post__category,
+	.post__date {
+		color: #313946;
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 14px;
+	}
+	
+	.post__category {
+		display: block;
+		letter-spacing: 1.05;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.post__image-wrap {
+		min-width: 240px;
+	}
+
+	.post__image {
+		height: 160px;
+		max-height: 160px;;
+		max-width: 240px;;
+		object-fit: cover;
+		width: 240px;
+	}
+
+	.post__title {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 27px;
+		margin-bottom: 16px;
+	}
+
+	.post__link {
+		color: #14161a;
+		text-decoration: none;
+	}
+
+	.post__perex {
+		color: #313946;
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	@media (max-width: 767px) {
+		.post {
+			flex-direction: column-reverse;
+		}
+
+		.post__image-wrap {
+			margin-bottom: 16px;
+		}
+
+		.post__image {
+			max-width: 100%;
+			width: 100%;
+		}
+
+		.post__list-item:not(:last-of-type) {
+			margin-bottom: 32px;
+		}
+	}
+
+	.amp .post__image-wrap {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		max-height: 160px;
+		overflow: hidden;
+	}
+
+	.amp .post__image {
+		height: auto;
+		max-height: none;
+	}
+</style>
